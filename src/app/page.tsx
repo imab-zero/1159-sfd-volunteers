@@ -169,9 +169,9 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => scrollToSection(2)}
-                className="px-8 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 hover:scale-[1.03] transition-transform duration-300"
+                className="px-8 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
               >
-                I WANT TO VOLUNTEER
+              Volunteer
               </button>
             </div>
           </div>
