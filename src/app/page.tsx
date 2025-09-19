@@ -53,17 +53,17 @@ export default function Home() {
   };
 
   return (
-    <div className=" bg-black text-white pt-16">
+    <div className=" bg-black text-white pt-0">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full h-16 bg-black/80 backdrop-blur-sm z-50 px-6 py-4">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-xl font-bold">
             <Image
-              src="/assets/log.png"
+              src="/assets/logo.svg"
               alt="Logo"
-              width={20}
-              height={20}
-              className="w-10 h-10"
+              width={50}
+              height={50}
+              className="w-32 h-10"
               unoptimized
             />
           </div>
@@ -74,7 +74,7 @@ export default function Home() {
                 onClick={() => scrollToSection(index)}
                 className={`px-4 py-2 transition-colors ${
                   currentSection === index
-                    ? "text-yellow-600"
+                    ? "text-[#D4AF37]"
                     : "text-gray-400 hover:text-white"
                 }`}
               >
@@ -88,43 +88,46 @@ export default function Home() {
       {/* Scroll Sections */}
       <div
         ref={scrollContainerRef}
-        className="w-screen bg-black overflow-y-hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar"
+        className="w-screen  p-0 m-0 bg-amber-950 overflow-y-hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar"
       >
         {/* Section 1: Hero */}
         <section className="scroll-item relative min-w-full h-screen snap-center">
           {/* Background Layers */}
-          <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] bg-cover bg-center z-0" />
+          <div className="absolute inset-0 bg-[url('/hero-bg.jpg')] -top-10 bg-cover bg-center z-0" />
           <div className="absolute inset-0 bg-black/50 z-10" />
           <div className="absolute inset-0 z-20">
-            <Image
+            {/* <Image
               src="/assets/dots-grid.svg"
               alt="Dots Pattern"
               width={400}
               height={400}
               className="absolute top-20 right-20 opacity-30"
               unoptimized
-            />
-            <Image
+            /> */}
+            {/* <Image
               src="/assets/circle-pattern.svg"
               alt="Circle Pattern"
               width={800}
               height={800}
               className="absolute -bottom-96 -left-96 opacity-20"
               unoptimized
-            />
+            /> */}
           </div>
 
           {/* Hero Content */}
           <div className="relative z-30 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
             <h1
-              className={`text-5xl md:text-7xl font-bold mb-6 tracking-tight transition-all duration-1000 transform ${
+              className={`text-5xl md:text-7xl font-normal mb-6 tracking-tight transition-all duration-1000 transform ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-10 opacity-0"
               }`}
             >
-              <span className="text-yellow-600">SCHOOL</span> FOR THE{" "}
-              <span className="text-yellow-600">DARING</span>
+              SCHOOL FOR
+              <span className="font-bold italic text-[#D4AF37]">
+                {" "}
+                THE DARING
+              </span>
             </h1>
 
             {/* <p
@@ -169,9 +172,11 @@ export default function Home() {
               <button
                 type="button"
                 onClick={() => scrollToSection(2)}
-                className="px-8 py-4 bg-red-600 text-white font-bold rounded-full hover:bg-red-700 hover:scale-[1.03] transition-transform duration-300 cursor-pointer"
+
+                className="px-8 py-4 bg-[#D4AF37] text-white font-bold rounded-full hover:bg-yellow-400 hover:scale-[1.03] transition-transform duration-300"
               >
-              Volunteer
+                VOLUNTEER
+
               </button>
             </div>
           </div>
@@ -184,7 +189,7 @@ export default function Home() {
               src="/hero-bg.jpg"
               alt="Abstract Background"
               fill
-              className="object-cover opacity-30"
+              className="object-cover opacity-56"
               unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/0" />
@@ -201,7 +206,9 @@ export default function Home() {
           <div className="relative z-10 container mx-auto px-6 py-24 flex flex-col justify-center h-full">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               <div className="pt-52 md:pt-0">
-                <div className="theme-number animate-fade-in">01</div>
+                <div className="text-3xl font-bold text-[#D4AF37] animate-fade-in">
+                  01
+                </div>
                 <h2 className="theme-title animate-slide-up">
                   We Challenge Conventions
                 </h2>
@@ -259,7 +266,9 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start overflow-y-auto">
               {/* Left: Text Content */}
               <div className="pt-0">
-                <div className="theme-number animate-fade-in">02</div>
+                <div className="text-3xl font-bold text-[#D4AF37] animate-fade-in">
+                  02
+                </div>
                 <h2 className="theme-title animate-slide-up">
                   Volunteer Registration – The School for the Daring National
                   Tour
@@ -282,7 +291,7 @@ export default function Home() {
               {/* Right Form Content */}
               <div className="animate-scale">
                 <div className="w-full p-8 bg-black/80 rounded-lg border border-gray-800">
-                  <h2 className="text-2xl font-bold mb-6 text-center text-yellow-600">
+                  <h2 className="text-2xl font-bold mb-6 text-center text-[#D4AF37]">
                     VOLUNTEER REGISTRATION
                   </h2>
 
@@ -371,7 +380,7 @@ export default function Home() {
                         <input
                           type="text"
                           placeholder="Full Name *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={fullName}
                           onChange={(e) => setFullName(e.target.value)}
                           required
@@ -380,7 +389,7 @@ export default function Home() {
                         <input
                           type="tel"
                           placeholder="Phone Number *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           required
@@ -389,7 +398,7 @@ export default function Home() {
                         <input
                           type="email"
                           placeholder="Email Address *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           required
@@ -398,7 +407,7 @@ export default function Home() {
                         <input
                           type="text"
                           placeholder="State *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={state}
                           onChange={(e) => setState(e.target.value)}
                           required
@@ -407,7 +416,7 @@ export default function Home() {
                         <input
                           type="text"
                           placeholder="City *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={city}
                           onChange={(e) => setCity(e.target.value)}
                           required
@@ -416,7 +425,7 @@ export default function Home() {
                         <input
                           type="text"
                           placeholder="University/Organization *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={university}
                           onChange={(e) => setUniversity(e.target.value)}
                           required
@@ -425,7 +434,7 @@ export default function Home() {
                         <input
                           type="text"
                           placeholder="Department/Field of Study *"
-                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                          className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                           value={department}
                           onChange={(e) => setDepartment(e.target.value)}
                           required
@@ -436,7 +445,7 @@ export default function Home() {
                             Availability *
                           </label>
                           <select
-                            className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-yellow-600"
+                            className="w-full p-3 bg-gray-900 border border-gray-700 rounded focus:ring-2 focus:ring-[#D4AF37]"
                             value={availability}
                             onChange={(e) => setAvailability(e.target.value)}
                             required
@@ -454,7 +463,7 @@ export default function Home() {
                           </select>
                         </div>
 
-                        <h3 className="text-lg font-semibold text-yellow-500 mb-2 mt-6">
+                        <h3 className="text-lg font-semibold text-[#D4AF37] mb-2 mt-6">
                           🛠️ Volunteer Role Preference
                         </h3>
                         <p className="text-gray-400 text-sm mb-3">
@@ -491,7 +500,7 @@ export default function Home() {
                                     );
                                   }
                                 }}
-                                className="rounded border-gray-600 text-yellow-600 focus:ring-yellow-600"
+                                className="rounded border-gray-600 text-[#D4AF37] focus:ring-[#D4AF37]"
                               />
                               <span className="text-sm">{role}</span>
                             </label>
@@ -499,7 +508,7 @@ export default function Home() {
                         </div>
 
                         {status === "error" && (
-                          <div className="text-yellow-600 text-sm font-bold p-2 bg-red-100/10 border border-yellow-600 rounded animate-pulse">
+                          <div className="text-[#D4AF37] text-sm font-bold p-2 bg-red-100/10 border border-[#D4AF37] rounded animate-pulse">
                             Error: {errorMessage}
                           </div>
                         )}
@@ -507,11 +516,9 @@ export default function Home() {
                         <button
                           type="submit"
                           disabled={status === "loading"}
-                          className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded transition-all duration-300 hover:scale-[1.03] disabled:opacity-50"
+                          className="w-full bg-[#D4AF37] hover:bg-yellow-500 text-white font-bold py-3 px-4 rounded transition-all duration-300 hover:scale-[1.03] disabled:opacity-50"
                         >
-                          {status === "loading"
-                            ? "Submitting..."
-                            : "SUBMIT VOLUNTEER APPLICATION"}
+                          {status === "loading" ? "Submitting..." : "SUBMIT"}
                         </button>
                       </form>
                     </div>
