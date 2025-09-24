@@ -59,7 +59,7 @@ export default function Home() {
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-xl font-bold">
             <Image
-              src="/assets/logo.svg"
+              src="/white.svg"
               alt="Logo"
               width={50}
               height={50}
@@ -67,6 +67,7 @@ export default function Home() {
               unoptimized
             />
           </div>
+
           <div className="flex space-x-6">
             {[0, 1, 2].map((index) => (
               <button
